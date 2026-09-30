@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vaikae"
+version = "0.1.0"
+description = "JAX kernel of the VAIKAE state likelihood and latent rollout"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jax",
+    "equinox",
+    "optax",
+    "numpy",
+]
+
+[project.optional-dependencies]
+tests = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
